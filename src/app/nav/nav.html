@@ -1,0 +1,52 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- زر التوجيل على الموبايل -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- شعار الموقع -->
+    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+      <img src="/image/ChatGPT Image Aug 11, 2025, 09_20_51 PM.png" height="40" alt="Logo" />
+    </a>
+
+    <!-- روابط القائمة -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="auth.isAuthenticated()">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item" *ngIf="auth.isAuthenticated()">
+          <a class="nav-link" href="/ProductApi">Projects</a>
+        </li>
+      </ul>
+
+      <!-- صورة البروفايل -->
+      <div class="profile me-3" *ngIf="auth.isAuthenticated()">
+       <a  href="/profile"><img src="/image/ChatGPT Image Aug 11, 2025, 09_20_51 PM.png" alt="Profile Image" ></a> 
+      </div>
+
+      <!-- زر تسجيل الدخول / تسجيل الخروج -->
+      <div class="login">
+        <a *ngIf="!auth.isAuthenticated()" class="nav-link d-flex align-items-center" href="/login">
+          <i class="fa-solid fa-right-to-bracket me-1"></i> Login
+        </a>
+        <a *ngIf="auth.isAuthenticated()" class="nav-link d-flex align-items-center" (click)="logout()" href="/login">
+          <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+        </a>
+      </div>
+
+    </div>
+  </div>
+</nav>

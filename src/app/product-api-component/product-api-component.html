@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let p of products"  class="col-12 col-sm-6 col-md-3 mb-4">
+
+      <div class="card h-100">
+        <a [routerLink]="['/product-api',p.id]">
+          <div class="card-body">
+            <img [src]="p.image" class="card-img-top" alt="Product image">
+              <h5 class="card-title">{{ p.title  }}</h5>
+            <p class="card-text">{{ p.price | currency:'EGP'}}</p>
+          </div>
+        </a>
+        <!-- <button (click)="Deleteing(p.id)">Delete</button>
+        <button (click)="edit(p.id)">Edit</button> -->
+      </div>
+    </div>
+  </div>
+</div>

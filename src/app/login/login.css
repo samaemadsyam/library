@@ -1,0 +1,59 @@
+/* Divider */
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+/* ارتفاع مخصص للصفحة */
+.h-custom {
+  height: calc(100% - 73px);
+}
+
+/* الأيقونات داخل الأزرار */
+.btn-floating i {
+  color: #000 !important;
+}
+
+/* خلفية اللوجو */
+.logo-container {
+  background-color: #f9e8d2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.logo-container img {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+/* أزرار بلون اللوجو */
+button.btn-primary,
+button.btn-primary.btn-lg,
+button.btn-primary.btn-floating {
+  background-color: #f9e8d2 !important;
+  border-color: #f9e8d2 !important;
+  color: #000 !important;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* عند المرور بالماوس */
+button.btn-primary:hover,
+button.btn-primary.btn-lg:hover,
+button.btn-primary.btn-floating:hover {
+  background-color: #e6d2b9 !important;
+  border-color: #e6d2b9 !important;
+  color: #000 !important;
+}
+
+/* تحسين تجاوب الصفحة للأجهزة الصغيرة */
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
