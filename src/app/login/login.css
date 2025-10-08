@@ -1,4 +1,18 @@
-/* Divider */
+/* 🔷 Wrapper to prevent overlapping with footer/navbar */
+.login-wrapper {
+  padding-top: 80px; /* navbar */
+  padding-bottom: 80px; /* footer */
+  min-height: calc(100vh - 160px); /* full height minus navbar & footer */
+  display: flex;
+  align-items: center;
+}
+
+/* ✅ Custom height for the container */
+.h-custom {
+  width: 100%;
+}
+
+/* 🔷 Divider */
 .divider:after,
 .divider:before {
   content: "";
@@ -7,17 +21,7 @@
   background: #eee;
 }
 
-/* ارتفاع مخصص للصفحة */
-.h-custom {
-  height: calc(100% - 73px);
-}
-
-/* الأيقونات داخل الأزرار */
-.btn-floating i {
-  color: #000 !important;
-}
-
-/* خلفية اللوجو */
+/* 🔷 Logo Container */
 .logo-container {
   background-color: #f9e8d2;
   display: flex;
@@ -25,24 +29,32 @@
   align-items: center;
   padding: 20px;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .logo-container img {
   background-color: transparent;
   border-radius: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
-/* أزرار بلون اللوجو */
+/* 🔷 Form Styling */
+form {
+  font-size: 1rem;
+  padding: 20px;
+}
+
+/* 🔷 Buttons */
 button.btn-primary,
 button.btn-primary.btn-lg,
 button.btn-primary.btn-floating {
   background-color: #f9e8d2 !important;
   border-color: #f9e8d2 !important;
   color: #000 !important;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
-/* عند المرور بالماوس */
 button.btn-primary:hover,
 button.btn-primary.btn-lg:hover,
 button.btn-primary.btn-floating:hover {
@@ -51,9 +63,92 @@ button.btn-primary.btn-floating:hover {
   color: #000 !important;
 }
 
-/* تحسين تجاوب الصفحة للأجهزة الصغيرة */
+/* 🔷 Social Icons Inside Buttons */
+.btn-floating i {
+  color: #000 !important;
+}
+
+/* 🔷 Responsive: Medium Devices */
+@media (max-width: 992px) {
+
+  form {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .divider p {
+    font-size: 15px;
+  }
+}
+
+/* 🔷 Responsive: Tablets */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 160px;
+  }
+
+  .login-wrapper {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    display: block;
+  
+
+    padding-bottom: 60px;
+    display: block;
+  }
+
+  .logo-container {
+    padding: 15px;
+  }
+
+  .logo-container img {
+    max-width: 80%;
+  }
+
+  form {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .divider p {
+    font-size: 14px;
+  }
+
+  button.btn-primary {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+}
+
+/* 🔷 Responsive: Mobile */
 @media (max-width: 450px) {
-  .h-custom {
-    height: 100%;
+  .main-content {
+    padding-top: 240px; /* زيادة المسافة العلوية للصفحة الرئيسية */
+  }
+  .login-wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .logo-container {
+    padding: 8px;
+  }
+
+  .logo-container img {
+    max-width: 60%;
+  }
+
+  form {
+    font-size: 0.85rem;
+    padding: 5px;
+  }
+
+  .divider p {
+    font-size: 13px;
+  }
+
+  button.btn-primary {
+    font-size: 0.85rem;
+    padding: 8px 15px;
   }
 }

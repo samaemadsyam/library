@@ -1,0 +1,27 @@
+.social-fullwidth {
+  width: 85vw; /* عرض كامل الصفحة */
+  margin: 0; /* إزالة أي مسافة جانبية */
+  padding: 10px 0; /* مسافة علوية وسفلية */
+  background-color: #fff; /* لون خلفية مناسب */
+}
+
+.list-group {
+  width: 100%;       /* تمتد بعرض الحاوي */
+  max-width: 100%;   /* تمنع تجاوز أي حد */
+  padding: 0;
+  margin: 0;
+}
+
+.social-item {
+  border-radius: 10px;
+   transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.social-item:hover {
+  background-color: #117b96;
+  transform: translateX(5px);
+}

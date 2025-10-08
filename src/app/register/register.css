@@ -1,1 +1,9 @@
-
+@media (max-width: 768px) {
+.main-content {
+    padding-top: 280px;
+  }
+    .mg-fluid{
+        padding-top: 100px;
+        padding-bottom: 60px;
+        display: block;
+    }}

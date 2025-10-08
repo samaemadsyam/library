@@ -14,18 +14,19 @@
     </button>
 
     <!-- شعار الموقع -->
-    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+    <a class="navbar-brand mt-2 mt-lg-0" href="/ProductApi">
       <img src="/image/ChatGPT Image Aug 11, 2025, 09_20_51 PM.png" height="40" alt="Logo" />
+      
     </a>
 
     <!-- روابط القائمة -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" *ngIf="auth.isAuthenticated()">
-          <a class="nav-link" href="#">Dashboard</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="/register">Register</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/face">categories</a>
         </li>
         <li class="nav-item" *ngIf="auth.isAuthenticated()">
           <a class="nav-link" href="/ProductApi">Projects</a>
@@ -34,7 +35,7 @@
 
       <!-- صورة البروفايل -->
       <div class="profile me-3" *ngIf="auth.isAuthenticated()">
-       <a  href="/profile"><img src="/image/ChatGPT Image Aug 11, 2025, 09_20_51 PM.png" alt="Profile Image" ></a> 
+       <a  href="/profile"><img src="/image/WhatsApp Image 2024-05-01 at 10.51.22 PM.jpeg" alt="Profile Image" ></a> 
       </div>
 
       <!-- زر تسجيل الدخول / تسجيل الخروج -->

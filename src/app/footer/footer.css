@@ -1,19 +1,51 @@
-footer {
-  background-color: #343a40 !important; /* نفس لون النافبار */
-  color: white !important;
+/* 🔹 Footer جديد */
+.custom-footer {
+  background: #212529; /* أسود أنيق */
+  color: #f8f9fa;
+  padding: 50px 0 20px;
+  font-size: 15px;
 }
 
-footer a {
-  color: white !important;
+.custom-footer h5 {
+  color: #00c3ff;
+  margin-bottom: 20px;
+}
+
+.custom-footer p {
+  color: #adb5bd;
+  line-height: 1.6;
+}
+
+.custom-footer a {
+  color: #f8f9fa;
   text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease, padding-left 0.2s ease;
 }
 
-footer a:hover {
-  color: #adb5bd !important;
-  text-decoration: underline;
+.custom-footer a:hover {
+  color: #00c3ff;
+  padding-left: 5px;
 }
 
-/* لتعديل أيقونات الفوتر */
-footer i {
-  color: white !important;
+/* Social icons */
+.social-icons a {
+  font-size: 20px;
+  margin-right: 15px;
+  color: #f8f9fa;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #00c3ff;
+  transform: scale(1.2);
+}
+
+.custom-footer hr {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.custom-footer .text-center {
+  color: #adb5bd;
 }

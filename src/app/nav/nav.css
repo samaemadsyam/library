@@ -1,27 +1,55 @@
-/* أيقونات تسجيل الدخول */
-.login {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px; /* مسافة بين الأيقونة والنص */
-  cursor: pointer;
+.navbar {
+  background: linear-gradient(135deg, #212529, #343a40); /* تدرج رمادي شيك */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: fixed;   /* ✅ خلي الناف بار ثابت */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.login i,
-.login a {
-  font-size: 20px;
-  color: white;
-  transition: color 0.3s ease;
+.navbar .nav-link {
+  color: #f8f9fa !important;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.login:hover i,
-.login:hover a {
-  color: rgb(0, 195, 255);
+.navbar .nav-link:hover {
+  color: #00c3ff !important;
+  transform: scale(1.05);
 }
 
-/* صورة البروفايل */
+/* 🔹 أيقونة البراند */
+.navbar-brand img {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+/* 🔹 البروفايل */
 .profile img {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid #00c3ff;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.profile img:hover {
+  transform: scale(1.1);
+  border-color: #fff;
+}
+
+/* 🔹 أيقونات تسجيل الدخول */
+.login a {
+  font-size: 16px;
+  color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.login a:hover {
+  color: #00c3ff;
 }
