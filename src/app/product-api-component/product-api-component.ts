@@ -110,14 +110,23 @@ export class ProductApiComponent implements OnInit, OnDestroy {
     this.skip = (page - 1) * this.limit;
     this.loadProducts();
   }
+getDisplayedPages(): number[] {
+  const pages: number[] = [];
+  const maxPagesToShow = 5; // عدد الصفحات اللي تظهر فقط
+  let startPage = Math.max(1, this.currentPage - Math.floor(maxPagesToShow / 2));
+  let endPage = startPage + maxPagesToShow - 1;
 
-  getDisplayedPages(): number[] {
-    const pages = [];
-    for (let i = 1; i <= this.totalPages; i++) {
-      pages.push(i);
-    }
-    return pages;
+  if (endPage > this.totalPages) {
+    endPage = this.totalPages;
+    startPage = Math.max(1, endPage - maxPagesToShow + 1);
   }
+
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i);
+  }
+
+  return pages;
+}
 
   addToCart(product: any) {
     this.cart.addToCart(product);
