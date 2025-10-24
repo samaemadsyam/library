@@ -1,27 +1,32 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @angular-eslint/prefer-inject */
-import { CommonModule, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Auth } from '../service/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './nav.html',
-  styleUrl: './nav.css'
+  styleUrls: ['./nav.css']
 })
-export class Nav {
- constructor(public auth : Auth){}
- logedIn! :boolean
-ngOnInit(){
-  this.logedIn = this.auth.isAuthenticated();
+export class Nav implements OnInit, OnDestroy {
+  logedIn!: boolean;
 
-}
-ngOnDestroy(){
-  this.logedIn = false;
-}
+  constructor(public auth: Auth, private router: Router) {}
 
-logout() {
-    this.auth.logout();
+  ngOnInit() {
+    this.logedIn = this.auth.isAuthenticated();
+  }
+
+  ngOnDestroy() {
+    this.logedIn = false;
+  }
+
+  logout() {
+    this.auth.logout(); // ❌ مسح الجلسة
+    this.router.navigate(['/login']); // ✅ إعادة التوجيه لصفحة تسجيل الدخول
   }
 }

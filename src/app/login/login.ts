@@ -41,6 +41,7 @@ ngOnInit(){
     next:(res)=>{
       this.authService.saveToken(res);
       this.router.navigate(["/ProductApi"])
+      
 
     },
     error:(error)=>{
