@@ -18,9 +18,11 @@ export interface User {
   providedIn: 'root'
 })
 export class Auth {
-  getRole() {
-    throw new Error('Method not implemented.');
+  getRole(): string {
+    return localStorage.getItem('role') || '';
   }
+
+
   private url = 'https://api.escuelajs.co/api/v1/auth';
 
   constructor(private http: HttpClient) {}

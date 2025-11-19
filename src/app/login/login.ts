@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Auth } from '../service/auth';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Route, Router } from '@angular/router';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { jwtDecode } from 'jwt-decode';
 
 @Component({
