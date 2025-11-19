@@ -1,13 +1,14 @@
 .navbar {
-  background: rgba(0, 0, 0, 0.438) ; /* تدرج رمادي شيك */
+  background: rgba(0, 0, 0, 0.438);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  position: fixed;   /* ✅ خلي الناف بار ثابت */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 }
 
+/* الروابط العامة */
 .navbar .nav-link {
   color: #f8f9fa !important;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -18,7 +19,7 @@
   transform: scale(1.05);
 }
 
-/* 🔹 أيقونة البراند */
+/* اللوجو */
 .navbar-brand img {
   border-radius: 8px;
   transition: transform 0.3s ease;
@@ -28,7 +29,50 @@
   transform: rotate(-5deg) scale(1.05);
 }
 
-/* 🔹 البروفايل */
+/* الفيف والعربة واللوجن */
+.fav,
+.car,
+.login {
+  margin: 15px;
+}
+
+/* 👇 هنا التعديل المهم */
+.fav a,
+.car a,
+.login a {
+  font-size: 18px;
+  color: #f8f9fa !important; /* أبيض */
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* أيقونة الفيف */
+.fav a i {
+  color: #ffffff !important; /* أبيض افتراضيًا */
+  transition: color 0.3s ease;
+}
+
+.fav a:hover i {
+  color: red !important; /* ❤️ أحمر عند hover */
+}
+
+/* العربة */
+.car a i {
+  color: #f8f9fa !important;
+  transition: color 0.3s ease;
+}
+
+.car a:hover i {
+  color: #00c3ff !important;
+}
+
+/* اللوجن */
+.login a:hover {
+  color: #00c3ff !important;
+}
+
+/* البروفايل */
 .profile img {
   width: 42px;
   height: 42px;
@@ -41,15 +85,4 @@
 .profile img:hover {
   transform: scale(1.1);
   border-color: #fff;
-}
-
-/* 🔹 أيقونات تسجيل الدخول */
-.login a {
-  font-size: 16px;
-  color: #f8f9fa;
-  transition: all 0.3s ease;
-}
-
-.login a:hover {
-  color: #00c3ff;
 }

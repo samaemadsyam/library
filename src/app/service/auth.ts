@@ -5,6 +5,7 @@
 /* eslint-disable @angular-eslint/prefer-inject */
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
 
 export interface User {
   id: number;
@@ -17,6 +18,9 @@ export interface User {
   providedIn: 'root'
 })
 export class Auth {
+  getRole() {
+    throw new Error('Method not implemented.');
+  }
   private url = 'https://api.escuelajs.co/api/v1/auth';
 
   constructor(private http: HttpClient) {}
@@ -25,11 +29,19 @@ export class Auth {
   login(email: string, password: string) {
     return this.http.post(`${this.url}/login`, { email, password });
   }
-
+  getProfile() {
+    return this.http.get(`${this.url}/profile`, 
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token') }`,
+      },
+    }
+    );
+  }
   // حفظ التوكن في LocalStorage
   saveToken(response: any) {
     localStorage.setItem("token", response.access_token);
-  }
+   }
 
   // جلب التوكن
   getToken() {
@@ -39,6 +51,8 @@ export class Auth {
   // تسجيل الخروج
   logout(): void {
     localStorage.removeItem("token");
+    localStorage.removeItem("role");
+
   }
 
   // التحقق من حالة تسجيل الدخول
@@ -48,12 +62,12 @@ export class Auth {
   }
 
   // مثال لبيانات المستخدم (تجريبية)
-  getProfile(): User {
-    return {
-      id: 1,
-      name: "Admin User",
-      email: "admin@gmail.com",
-      role: "admin"
-    };
-  }
+  // getProfile(): User {
+  //   return {
+  //     id: 1,
+  //     name: "Admin User",
+  //     email: "admin@gmail.com",
+  //     role: "admin"
+  //   };
+  // }
 }

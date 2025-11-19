@@ -5,6 +5,8 @@ import { ProductApiComponent } from './product-api-component/product-api-compone
 import { AuthGuard } from './gardss/auth-guard';
 import { Register } from './register/register';
 import { Profile } from './profile/profile';
+import { Car } from './car/car';
+// import { Fav } from './fav/fav';
 
 export const routes: Routes = [
       { path: 'login', component: Login },
@@ -12,6 +14,8 @@ export const routes: Routes = [
       {path:'',redirectTo:'login',pathMatch:'full'},
       { path: 'register', component: Register },
       {path:'profile',component:Profile},
+      {path:'car',component:Car},
+      // {path:'fav',component:Fav},
   
 
 

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Auth } from '../service/auth';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Route, Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-login',
@@ -40,6 +41,16 @@ ngOnInit(){
   this.authService.login(email,password).subscribe({
     next:(res)=>{
       this.authService.saveToken(res);
+      //decode token
+      // const decoded_Token=jwtDecode(res.access_token);
+      console.log(res);
+      
+      this.authService.getProfile().subscribe(user=>{
+        console.log(user);
+        // this.userRole=user.role;
+        // localStorage.setItem("role",this.userRole)
+      })
+
       this.router.navigate(["/ProductApi"])
       
 
