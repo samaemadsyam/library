@@ -1,154 +1,163 @@
 /* 🔷 Wrapper to prevent overlapping with footer/navbar */
+
 .login-wrapper {
-  padding-top: 80px; /* navbar */
-  padding-bottom: 80px; /* footer */
-  min-height: calc(100vh - 160px); /* full height minus navbar & footer */
-  display: flex;
-  align-items: center;
+    padding-top: 80px;
+    /* navbar */
+    padding-bottom: 80px;
+    /* footer */
+    min-height: calc(100vh - 160px);
+    /* full height minus navbar & footer */
+    display: flex;
+    align-items: center;
 }
+
 
 /* ✅ Custom height for the container */
+
 .h-custom {
-  width: 100%;
+    width: 100%;
 }
+
 
 /* 🔷 Divider */
+
 .divider:after,
 .divider:before {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: #eee;
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
 }
 
+
 /* 🔷 Logo Container */
+
 .logo-container {
-  background-color: #f9e8d2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+    /* background-color: #f9e8d2; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .logo-container img {
-  background-color: transparent;
-  border-radius: 10px;
-  max-width: 100%;
-  height: auto;
+    background-color: transparent;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
 }
+
 
 /* 🔷 Form Styling */
+
 form {
-  font-size: 1rem;
-  padding: 20px;
+    font-size: 1rem;
+    padding: 20px;
 }
 
+
 /* 🔷 Buttons */
+
 button.btn-primary,
 button.btn-primary.btn-lg,
 button.btn-primary.btn-floating {
-  background-color: #f9e8d2 !important;
-  border-color: #f9e8d2 !important;
-  color: #000 !important;
-  transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    background-color: (135deg, #1e8ad2, #962da0)!important;
+    border-color: #7a82f1 !important;
+    color: #000 !important;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    box-shadow: 0 8px 20px rgba(150, 45, 160, 0.3);
 }
 
 button.btn-primary:hover,
 button.btn-primary.btn-lg:hover,
 button.btn-primary.btn-floating:hover {
-  background-color: #e6d2b9 !important;
-  border-color: #e6d2b9 !important;
-  color: #000 !important;
+    background-color: (135deg, #a6d2f049, #85617d62)!important;
+    border-color: #e1b9e6 !important;
+    color: #000 !important;
 }
+
 
 /* 🔷 Social Icons Inside Buttons */
+
 .btn-floating i {
-  color: #000 !important;
+    color: #000 !important;
 }
+
 
 /* 🔷 Responsive: Medium Devices */
+
 @media (max-width: 992px) {
-
-  form {
-    font-size: 0.95rem;
-    padding: 10px;
-  }
-
-  .divider p {
-    font-size: 15px;
-  }
+    form {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+    .divider p {
+        font-size: 15px;
+    }
 }
+
 
 /* 🔷 Responsive: Tablets */
+
 @media (max-width: 768px) {
-  .main-content {
-    padding-top: 160px;
-  }
-
-  .login-wrapper {
-    padding-top: 100px;
-    padding-bottom: 60px;
-    display: block;
-  
-
-    padding-bottom: 60px;
-    display: block;
-  }
-
-  .logo-container {
-    padding: 15px;
-  }
-
-  .logo-container img {
-    max-width: 80%;
-  }
-
-  form {
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-
-  .divider p {
-    font-size: 14px;
-  }
-
-  button.btn-primary {
-    font-size: 0.9rem;
-    padding: 10px 18px;
-  }
+    .main-content {
+        padding-top: 160px;
+    }
+    .login-wrapper {
+        padding-top: 100px;
+        padding-bottom: 60px;
+        display: block;
+        padding-bottom: 60px;
+        display: block;
+    }
+    .logo-container {
+        padding: 15px;
+    }
+    .logo-container img {
+        max-width: 80%;
+    }
+    form {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .divider p {
+        font-size: 14px;
+    }
+    button.btn-primary {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
 }
 
+
 /* 🔷 Responsive: Mobile */
+
 @media (max-width: 450px) {
-  .main-content {
-    padding-top: 240px; /* زيادة المسافة العلوية للصفحة الرئيسية */
-  }
-  .login-wrapper {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .logo-container {
-    padding: 8px;
-  }
-
-  .logo-container img {
-    max-width: 60%;
-  }
-
-  form {
-    font-size: 0.85rem;
-    padding: 5px;
-  }
-
-  .divider p {
-    font-size: 13px;
-  }
-
-  button.btn-primary {
-    font-size: 0.85rem;
-    padding: 8px 15px;
-  }
+    .main-content {
+        padding-top: 240px;
+        /* زيادة المسافة العلوية للصفحة الرئيسية */
+    }
+    .login-wrapper {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .logo-container {
+        padding: 8px;
+    }
+    .logo-container img {
+        max-width: 60%;
+    }
+    form {
+        font-size: 0.85rem;
+        padding: 5px;
+    }
+    .divider p {
+        font-size: 13px;
+    }
+    button.btn-primary {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
 }

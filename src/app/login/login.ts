@@ -25,32 +25,18 @@ ngOnInit(){
   })
 }
   onSubmit() {
-    // console.log(this.form.value);
-    // console.log(this.form.value.email);
-    // console.log(this.form.value.password);
-    // const email=this.form.value.email
-    // const password=this.form.value.password
-    // console.log(`email is ${email} password is ${password}`);
+
   const {email,password}= this.form.value;
-  // if(this.authService.login(email,password)){
-    
-  //   this.router.navigate(["/ProductApi"])
-  // }
-  // else{
-  //   alert("Email or Password is invalid !!")
-  // }
   this.authService.login(email,password).subscribe({
     next:(res)=>{
       this.authService.saveToken(res);
-      //decode token
-      // const decoded_Token=jwtDecode(res.access_token);
       console.log(res);
       
       this.authService.getProfile().subscribe(user=>{
         console.log(user);
-        // this.userRole=user.role;
-        // localStorage.setItem("role",this.userRole)
-      })
+        this.userRole= user.role;
+        localStorage.setItem('role',user.role)
+        })
 
       this.router.navigate(["/ProductApi"])
       

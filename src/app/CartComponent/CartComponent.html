@@ -1,0 +1,23 @@
+<div class="cart-wrapper">
+    <h2 class="mb-3 text-center cart-title-heading">My Cart</h2>
+
+    <div *ngIf="cartItems.length === 0" class="alert alert-warning text-center">
+        Cart is empty
+    </div>
+
+    <div class="cart-container">
+        <div *ngFor="let item of cartItems; let i = index" class="cart-card">
+            <div class="cart-image">
+                <img [src]="item.images ? item.images[0] : 'assets/default-product.png'" alt="Product Image">
+            </div>
+
+            <div class="cart-details">
+                <div class="cart-title">{{ item.title }}</div>
+                <div class="cart-price">{{ item.price | currency:'EGP' }}</div>
+                <button class="btn-remove" (click)="removeItem(i)">Remove</button>
+            </div>
+        </div>
+    </div>
+
+    <button *ngIf="cartItems.length > 0" class="btn-clear" (click)="clearCart()">Clear Cart</button>
+</div>

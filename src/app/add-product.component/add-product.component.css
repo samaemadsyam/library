@@ -1,0 +1,105 @@
+    .product-page {
+        max-width: 700px;
+        margin: 50px auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .product-alert {
+        display: flex;
+        background: linear-gradient(90deg, #56ab2f, #a8e063);
+        color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.6s ease-in-out;
+    }
+    
+    .alert-icon {
+        font-size: 40px;
+    }
+    
+    .alert-text h3 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .alert-text p {
+        margin: 3px 0;
+    }
+    
+    .add-product-form {
+        background: #f7f7f7;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .add-product-form h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-group label {
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #555;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 14px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #117b96;
+        box-shadow: 0 0 8px rgba(47, 163, 171, 0.3);
+    }
+    
+    button {
+        width: 100%;
+        background: #117b96;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    button:disabled {
+        background: #a5c6d6;
+        cursor: not-allowed;
+    }
+    
+    button:hover:not(:disabled) {
+        background: #117b96;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }

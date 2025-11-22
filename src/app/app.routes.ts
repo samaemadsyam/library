@@ -5,7 +5,10 @@ import { ProductApiComponent } from './product-api-component/product-api-compone
 import { AuthGuard } from './gardss/auth-guard';
 import { Register } from './register/register';
 import { Profile } from './profile/profile';
-import { Car } from './car/car';
+import { AddProductComponent } from './add-product.component/add-product.component';
+import { AdminGuard } from './gardss/admin-guard';
+import { Cart } from './service/cart';
+import { CartComponent } from './CartComponent/CartComponent';
 // import { Fav } from './fav/fav';
 
 export const routes: Routes = [
@@ -14,7 +17,9 @@ export const routes: Routes = [
       {path:'',redirectTo:'login',pathMatch:'full'},
       { path: 'register', component: Register },
       {path:'profile',component:Profile},
-      {path:'car',component:Car},
+      {path:'cart',component: CartComponent},
+      {path:'add-product',component: AddProductComponent, canActivate:[AuthGuard , AdminGuard]},
+
       // {path:'fav',component:Fav},
   
 

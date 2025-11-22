@@ -1,0 +1,89 @@
+; ;           [المستخدم]
+; ;                |
+; ;        -------------------
+; ;        |        |        |
+; ;     admin     editor     user
+; ;        |        |        |
+; ; لوحة التحكم  تعديل المحتوى  مشاهدة المحتوى فقط
+
+; ; const role = getRole(); // تجيب الدور المخزن
+
+; ; if(role === 'admin') {
+; ;   console.log("أهلاً يا مسؤول، لديك صلاحيات كاملة!");
+; ; } else if(role === 'editor') {
+; ;   console.log("أهلاً يا محرر، يمكنك تعديل المحتوى.");
+; ; } else {
+; ;   console.log("أهلاً بك، يمكنك مشاهدة المحتوى فقط.");
+; ; }
+
+
+
+
+
+
+; [Login Process]
+;       |
+;       v
+; [User enters email & password]
+;       |
+;       v
+; [HttpClient.post(url, {email, password})] ---> سيرفر بيرجع JWT Token
+;       |
+;       v
+; [saveToken(token)]
+;       |
+;       v
+; localStorage.setItem('token', token)   <-- يخزن التوكن
+; localStorage.setItem('role', role)     <-- يخزن الدور لو موجود
+;       |
+;       v
+; [User wants profile]
+;       |
+;       v
+; [HttpClient.get(url, {headers: {Authorization: 'Bearer TOKEN'}})]
+;       |
+;       v
+; Observable<User>  <-- البيانات غير متزامنة، لازم subscribe
+;       |
+;       v
+; [Display data in UI]
+;       |
+;       v
+; [Check role]
+;       |
+;       v
+; if(getRole() === 'admin') ---> show admin panel
+; else ---> show normal user UI
+;       |
+;       v
+; [Logout]
+;       |
+;       v
+; logOut() ---> localStorage.clear() + reset isLogedIn
+
+
+
+
+
+
+; | الخاصية           | GET                     | POST               |
+; | ----------------- | ----------------------- | ------------------ |
+; | الغرض             | جلب بيانات              | إرسال/تعديل بيانات |
+; | مكان البيانات     | في URL                  | في body            |
+; | تأثير على السيرفر | لا                      | ممكن يغير بيانات   |
+; | أمان البيانات     | قليل (ممكن تظهر في URL) | أعلى (مش في URL)   |
+
+; | الرمز | المعنى           | يقارن إيه؟           | مثال                |
+; | ----- | ---------------- | -------------------- | ------------------- |
+; | =     | إسناد قيمة       | —                    | `x = 10`            |
+; | ==    | مقارنة غير صارمة | يقارن القيمة فقط     | `5 == "5" → true`   |
+; | ===   | مقارنة صارمة     | يقارن القيمة + النوع | `5 === "5" → false` |
+
+
+
+; | الحاجة                              | jwt-decode بيعملها؟ |
+; | ----------------------------------- | ------------------- |
+; | يفكّ Base64                         | ✔️                  |
+; | يطلع بيانات المستخدم (role, email…) | ✔️                  |
+; | يفك تشفير سري                       | ❌                   |
+; | خطير أمنياً                         | ❌ آمن تمامًا        |

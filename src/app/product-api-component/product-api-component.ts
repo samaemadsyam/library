@@ -18,7 +18,7 @@ export class ProductApiComponent implements OnInit, OnDestroy {
   products: any[] = [];
   filteredProducts: any[] = [];
   skip = 0;
-  limit = 16;
+  limit = 8;
   search = '';
   price_min = 0;
   price_max = 1000;
@@ -42,7 +42,7 @@ export class ProductApiComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getLength();
     this.loadProducts();
-    // console.log("🟢 Component initialized");
+    console.log("🟢 Component initialized");
   }
 
   loadProducts() {
@@ -123,8 +123,9 @@ export class ProductApiComponent implements OnInit, OnDestroy {
 
   addToCart(product: any) {
     this.cart.addToCart(product);
-    alert(`${product.title} is added to cart`);
+     this.router.navigate(['/cart']);
   }
+
 
   // ✅ وظيفة المفضلة
   toggleFav(id: number) {
